@@ -27,7 +27,7 @@ namespace Bodega.Repository
         public async Task<User?> GetUserByUsernameAsync(string username)
         {
             return await _context.Users
-                .FirstOrDefaultAsync(u => u.Username.Equals(username, StringComparison.OrdinalIgnoreCase)); // Busca un usuario por su nombre de usuario
+                .FirstOrDefaultAsync(u => u.Username.Equals(username, StringComparison.OrdinalIgnoreCase)); // Busca un usuario por su nombre 
         }
 
         public async Task AddUserAsync(User user)

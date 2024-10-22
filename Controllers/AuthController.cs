@@ -32,7 +32,7 @@ namespace Bodega.Controllers
                 return BadRequest("Credenciales no válidas.");
             }
 
-            User? userToAuthenticate = await _userService.AuthenticateUser(dto.Username, dto.Password); // Usa await aquí
+            User? userToAuthenticate = await _userService.AuthenticateUser(dto.Username, dto.Password);
             if (userToAuthenticate == null)
             {
                 return Unauthorized("Usuario o contraseña incorrectos.");

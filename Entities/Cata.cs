@@ -11,6 +11,6 @@ namespace Bodega.Entities
         public DateTime Date { get; set; }
 
         public List<Vino> Vinos { get; set; } = new List<Vino>(); // Inicializa la lista
-        public List<Invitado> Invitados { get; set; } = new List<Invitado>(); // Cambiado a una lista de Guest
+        public List<Invitado> Invitados { get; set; } = new List<Invitado>(); // Cambiado a una lista de Invitados
     }
 }

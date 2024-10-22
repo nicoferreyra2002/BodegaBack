@@ -14,17 +14,7 @@ public class BodegaContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        //modelBuilder.Entity<Vino>()
-        //    .HasKey(v => v.Id);
-
-        //modelBuilder.Entity<User>()
-        //    .HasKey(u => u.Id);
-
-        //modelBuilder.Entity<Cata>()
-        //    .HasKey(c => c.Id);
-
-        //modelBuilder.Entity<Invitado>()
-        //    .HasKey(i => i.Id);
+      
         base.OnModelCreating(modelBuilder);
         
     }

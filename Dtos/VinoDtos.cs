@@ -10,7 +10,7 @@ namespace Bodega.Dtos
         [Required(ErrorMessage = "Ingrese una Variedad.")]
         public string Variety { get; set; } = string.Empty;
 
-        [Range(1800, 2026, ErrorMessage = "El año debe estar entre 1800 y 2026.")]
+        [Range(1800, 2026, ErrorMessage = "El año debe estar entre 1700 y 2025.")]
         public int Year { get; set; }
 
         [Required(ErrorMessage = "Ingrese Region.")]

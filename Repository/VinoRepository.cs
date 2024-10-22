@@ -25,7 +25,7 @@ namespace Bodega.Repository
         // Método para obtener todos los vinos
         public List<Vino> GetVinos() => _context.Vinos.ToList();
 
-        // Método para obtener un vino por nombre (sin distinción de mayúsculas y minúsculas)
+        // Método para obtener un vino por nombre 
         public Vino GetVinoByName(string name)
         {
             return _context.Vinos
@@ -49,7 +49,7 @@ namespace Bodega.Repository
                 existingVino.Year = vino.Year;
                 existingVino.Region = vino.Region;
                 existingVino.Stock = vino.Stock;
-                _context.SaveChanges(); // Guarda los cambios en la base de datos
+                _context.SaveChanges(); 
             }
         }
     }

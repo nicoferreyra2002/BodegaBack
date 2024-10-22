@@ -1,5 +1,5 @@
 ﻿using Bodega.Repository;
-using BCrypt.Net; // Asegúrate de instalar la biblioteca BCrypt.Net
+using BCrypt.Net; 
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,7 +19,6 @@ namespace Bodega.Services
             _repository = repository;
         }
 
-        // Cambiado a Task<User?> para coincidir con la implementación del controlador
         public async Task<User?> AuthenticateUser(string username, string password)
         {
             // Verifica si el usuario existe

@@ -8,7 +8,7 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Obtener la cadena de conexi�n desde appsettings.json
+// Obtener la cadena de conexion desde appsettings.json
 var connectionString = builder.Configuration.GetConnectionString("BodegaConnection");
 
 // Agregar el contexto de base de datos con SQLite
@@ -16,7 +16,7 @@ builder.Services.AddDbContext<BodegaContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("BodegaAPIDBConnectionString")));
 
 
-// Configuraci�n de JWT
+// Configuracion de JWT
 var secretKey = builder.Configuration["Authentication:SecretForKey"];
 var key = Encoding.ASCII.GetBytes(secretKey);
 
@@ -37,8 +37,8 @@ builder.Services.AddAuthentication(options =>
         ValidateAudience = true,
         ValidIssuer = builder.Configuration["Authentication:Issuer"],
         ValidAudience = builder.Configuration["Authentication:Audience"],
-        ValidateLifetime = true, // Valida la expiraci�n del token
-        ClockSkew = TimeSpan.Zero // Elimina la tolerancia para la expiraci�n del token
+        ValidateLifetime = true, // Valida la expiracion del token
+        ClockSkew = TimeSpan.Zero // Elimina la tolerancia para la expiracion del token
     };
 });
 
@@ -51,7 +51,7 @@ builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<IVinoService, VinoService>();
 builder.Services.AddScoped<IUserService, UserService>();
 
-// Agregar Swagger para documentaci�n de la API
+// Agregar Swagger para documentacion de la API
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -65,8 +65,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-// Middleware para la autenticaci�n
-app.UseAuthentication(); // Asegura que se use la autenticaci�n antes de la autorizaci�n
+// Middleware para la autenticacion
+app.UseAuthentication(); // Asegura que se use la autenticacion antes de la autorizacion
 app.UseAuthorization();
 
 app.MapControllers();
