@@ -9,11 +9,12 @@ using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 
 // Obtener la cadena de conexi�n desde appsettings.json
-var connectionString = builder.Configuration.GetConnectionString("WineryConnection");
+var connectionString = builder.Configuration.GetConnectionString("BodegaConnection");
 
 // Agregar el contexto de base de datos con SQLite
 builder.Services.AddDbContext<BodegaContext>(options =>
-    options.UseSqlite(connectionString));
+    options.UseSqlite(builder.Configuration.GetConnectionString("BodegaAPIDBConnectionString")));
+
 
 // Configuraci�n de JWT
 var secretKey = builder.Configuration["Authentication:SecretForKey"];
